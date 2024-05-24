@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+  <body>
+    <%- include('./partials/nav') %>
+    <h1><%= movie.name %></h1>
+    <p><%= movie.year %></p>
+    <p><%= movie.rating %></p>
+
+    <ul>
+      <% movie.reviews.forEach(review => { %>
+      <li>
+        <p><%= review.text %></p>
+      </li>
+      <% }) %>
+    </ul>
+
+    <a href="/movies/<%=movie._id%>/reviews">Add a review</a>
+  </body>
+</html>
